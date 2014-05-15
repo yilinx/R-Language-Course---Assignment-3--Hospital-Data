@@ -31,10 +31,7 @@ rankhospital <- function(state, outcome, num = "best") {
         names(ReduceOR2) <- c("Hospital",NormOutcome)   #rename ReduceOR2
         OrderHospital <- order(ReduceOR2[,2],ReduceOR2[,1], decreasing=F)  #find new order using column 2 while column 1 as the tie-breaker
         CompareHospital <- ReduceOR2[OrderHospital,]   ##re-order ReduceOR2
-        ##RankHospital <- for(i in 1:num) {
-        ##        data.frame(as.character(CompareHospital[i,1]),as.numeric(CompareHospital[i,2]),as.numeric(i))
-        ##}
-        ##names(RankHospital) <- c("Hospital.Name","Rate","Rank")
+        
         if(num=="best"){
                 as.character(CompareHospital[1,1])
         } else if (num=="worst"){
