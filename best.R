@@ -32,7 +32,7 @@ best <- function(state, outcome) {
         OrderHospital <- order(ReduceOR2[,2],ReduceOR2[,1], decreasing=F)  #find new order using column 2 while column 1 as the tie-breaker
         CompareHospital <- ReduceOR2[OrderHospital,]   ##re-order ReduceOR2
 
-        head(CompareHospital, n=1) ##best Hospital
+        as.character(CompareHospital[1,1]) ##best Hospital
 
       
 }
